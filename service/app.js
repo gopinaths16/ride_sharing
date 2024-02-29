@@ -54,7 +54,10 @@ export default class App {
                 return;
             }
             let directRides = this.vehicles.filter((vehicle) => {
-                return vehicle._ride._origin === origin && vehicle._ride._destination === destination && vehicle._ride._availableSeats > 0 ;
+                if(vehicle._ride != undefined) {
+                    return vehicle._ride._origin === origin && vehicle._ride._destination === destination && vehicle._ride._availableSeats > 0;
+                }
+                return false;
             });
             if(directRides.length > 0) {
                 if(condition === condition_preferred_vehicle) {
