@@ -2,7 +2,8 @@ import Ride from "./ride.js";
 
 export default class Vehicle {
 
-    constructor(vehicleName, vehicleNumber) {
+    constructor(username, vehicleName, vehicleNumber) {
+        this._username = username;
         this._vehicleName = vehicleName;
         this._vehicleNumber = vehicleNumber;
     }

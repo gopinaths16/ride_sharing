@@ -1,4 +1,5 @@
 import App from "./service/app.js";
+import { condition_most_vacant, condition_preferred_vehicle } from "./helpers/constants.js";
 
 let app = new App();
 
@@ -25,3 +26,15 @@ app.offerRide("Shipra", "Bangalore", "Mysore", 2, "Polo", "KA-05-41491");
 app.offerRide("Shashank", "Hyderabad", "Bangalore", 2, "Baleno", "TS-05-62395");
 app.offerRide("Rahul", "Hyderabad", "Bangalore", 5, "XUV", "KA-05-1234");
 app.offerRide("Rohan", "Bangalore", "Pune", 1, "Swift", "KA-01-12345");
+
+app.selectRide("Nandini", "Bangalore", "Mysore", 1, condition_most_vacant, "");
+app.selectRide("Gaurav", "Bangalore", "Mysore", 1, condition_preferred_vehicle, "Activa");
+app.selectRide("Shashank", "Mumbai", "Bangalore", 1, condition_most_vacant, "");
+app.selectRide("Rohan", "Hyderabad", "Bangalore", 1, condition_preferred_vehicle, "Baleno");
+app.selectRide("Shashank", "Hyderabad", "Bangalore", 1, condition_preferred_vehicle, "Polo");
+
+app.endRide("Nandini");
+app.endRide("Gaurav");
+app.endRide("Rohan");
+
+app.printRideStats();
